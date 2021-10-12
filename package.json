@@ -1,0 +1,15 @@
+{
+  "name": "gulp-fronted-start-project",
+  "version": "1.0.0",
+  "description": "Gulp frontend start project",
+  "scripts": {},
+  "keywords": [
+    "gulp",
+    "js",
+    "sass",
+    "pug",
+    "linters"
+  ],
+  "author": "Julian",
+  "license": "WTFPL"
+}
