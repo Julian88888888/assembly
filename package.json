@@ -2,7 +2,19 @@
   "name": "gulp-fronted-start-project",
   "version": "1.0.0",
   "description": "Gulp frontend start project",
-  "scripts": {},
+  "scripts": {
+    "dev": "gulp watch",
+    "build:dev": "gulp build",
+    "build:prod": "gulp build --prod"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "keywords": [
     "gulp",
     "js",
@@ -11,5 +23,16 @@
     "linters"
   ],
   "author": "Julian",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "eslint": "^8.0.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.25.1",
+    "gulp": "^4.0.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3"
+  }
 }
