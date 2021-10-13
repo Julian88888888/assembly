@@ -9,3 +9,5 @@ export const build = () => {
 export const watch = () => {
   console.log(config.isProd);
 }
+
+const test = 1
