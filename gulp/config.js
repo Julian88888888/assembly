@@ -6,11 +6,11 @@ const config = {
     root: srcPath,
     sass: `${srcPath}/scss`,
     js: `${srcPath}/js`,
-    fonts: `${srcPath}assets/fonts`,
-    images: `${srcPath}assets/images`,
-    iconsMono: `${srcPath}assets/icons/mono`,
-    iconsMulti: `${srcPath}assets/icons/multi`,
-    pug: `${srcPath}assets/pug`,
+    fonts: `${srcPath}/assets/fonts`,
+    images: `${srcPath}/assets/images`,
+    iconsMono: `${srcPath}/assets/icons/mono`,
+    iconsMulti: `${srcPath}/assets/icons/multi`,
+    pug: `${srcPath}/pug`,
   },
 
   dest: {
