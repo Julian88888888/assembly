@@ -4,7 +4,7 @@ const destPath = 'build';
 const config = {
   src: {
     root: srcPath,
-    sass: `${srcPath}/scss`,
+    sass: `${srcPath}/sass`,
     js: `${srcPath}/js`,
     fonts: `${srcPath}/assets/fonts`,
     images: `${srcPath}/assets/images`,
