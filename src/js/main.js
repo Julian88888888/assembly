@@ -1,3 +1,8 @@
-import test from './test';
+import 'focus-visible';
+import lazyImages from './modules/lazyImages';
+import documentReady from './helpers/documentReady';
 
-test();
+documentReady(() => {
+	lazyImages();
+});
+

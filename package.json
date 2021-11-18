@@ -24,8 +24,10 @@
 		"linters"
 	],
 	"browserslist": [
-		"> 0.1%",
-		"IE 11"
+		"> 1%",
+		"last 2 versions",
+		"not dead",
+		"not IE 11"
 	],
 	"author": "Julian",
 	"license": "WTFPL",
@@ -43,16 +45,22 @@
 		"eslint-plugin-import": "^2.25.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
+		"gulp-changed": "^4.0.3",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-group-css-media-queries": "^1.2.2",
 		"gulp-if": "^3.0.0",
+		"gulp-imagemin": "^7.1.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-pug": "^5.0.0",
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^5.0.0",
+		"gulp-sass-glob": "^1.1.0",
 		"gulp-sourcemaps": "^3.0.0",
+		"gulp-svg-sprite": "^1.5.0",
 		"gulp-uglify": "^3.0.2",
 		"husky": "^7.0.2",
+		"imagemin-pngquant": "^9.0.2",
+		"imagemin-webp": "^6.0.0",
 		"lint-staged": "^11.2.3",
 		"pug-lint": "^2.6.0",
 		"sass": "^1.43.4",
@@ -65,6 +73,12 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"node-sass": "^6.0.1"
+		"focus-visible": "^5.2.0",
+		"import-fresh": "^3.3.0",
+		"node-sass": "^6.0.1",
+		"normalize": "^0.3.1",
+		"normalize.css": "^8.0.1",
+		"smart-grid": "^2.1.2",
+		"vanilla-lazyload": "^17.5.0"
 	}
 }

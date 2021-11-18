@@ -6,25 +6,42 @@ import autoprefixer from 'gulp-autoprefixer';
 import gcmq from 'gulp-group-css-media-queries';
 import cleanCSS from 'gulp-clean-css';
 import rename from 'gulp-rename';
-import sourcemaps from 'gulp-sourcemaps';
 import gulpif from 'gulp-if';
+import smartGrid from 'smart-grid';
+import importFresh from 'import-fresh';
+import sassGlob from 'gulp-sass-glob';
 import config from '../config';
 
 const sass = gulpSass(nodeSass);
 
-export const sassBuild = () => (
-	gulp.src(`${config.src.sass}/main.sass`)
+const SMART_GRID_CONFIG_NAME = 'smart-grid-config.js';
+
+const sassBuild = () => (
+	gulp.src(`${config.src.sass}/main.sass`, { sourcemaps: config.isDev })
 		.pipe(plumber())
-		.pipe(gulpif(config.isDev, sourcemaps.init()))
-		.pipe(sass())
+		.pipe(sassGlob())
+		.pipe(sass({
+			includePaths: ['./node_modules'],
+		}))
 		.pipe(gulpif(config.isProd, gcmq()))
 		.pipe(gulpif(config.isProd, autoprefixer()))
 		.pipe(gulpif(config.isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({
 			suffix: '.min',
 		}))
-		.pipe(gulpif(config.isDev, sourcemaps.write('.')))
-		.pipe(gulp.dest(config.dest.css))
+		.pipe(gulp.dest(config.dest.css, { sourcemaps: config.isDev }))
 );
 
-export const sassWatch = () => gulp.watch(`${config.src.sass}/**/*.sass`, sassBuild);
+const smartGridBuild = (callback) => {
+	const smartGridConfig = importFresh(`../../${SMART_GRID_CONFIG_NAME}`);
+	smartGrid(`${config.src.sass}/generated`, smartGridConfig);
+
+	callback();
+};
+
+export const stylesBuild = gulp.series(smartGridBuild, sassBuild);
+
+export const stylesWatch = () => {
+	gulp.watch(`${config.src.sass}/**/*.sass`, sassBuild);
+	gulp.watch(`./${SMART_GRID_CONFIG_NAME}`, smartGridBuild);
+};

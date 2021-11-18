@@ -4,7 +4,11 @@ import clean from './gulp/tasks/clean';
 import server from './gulp/tasks/server';
 import { scriptsBuild, scriptsWatch } from './gulp/tasks/scripts';
 import { pugBuild, pugWatch } from './gulp/tasks/pug';
-import { sassBuild, sassWatch } from './gulp/tasks/styles';
+import { stylesBuild, stylesWatch } from './gulp/tasks/styles';
+import { assetsBuild, assetsWatch } from './gulp/tasks/assets';
+import { imagesBuild, imagesWatch } from './gulp/tasks/images';
+import { spriteBuild, spriteWatch } from './gulp/tasks/sprite';
+
 
 
 
@@ -15,7 +19,10 @@ export const build = gulp.series(
 	gulp.parallel(
 		scriptsBuild,
 		pugBuild,
-		sassBuild,
+		stylesBuild,
+		assetsBuild,
+		imagesBuild,
+		spriteBuild,
 	)
 
 );
@@ -26,9 +33,12 @@ export const watch = gulp.series(
 	gulp.parallel(
 		scriptsWatch,
 		pugWatch,
-		sassWatch,
+		stylesWatch,
+		assetsWatch,
+		imagesWatch,
+		spriteWatch,
 	)
 
 );
 
-exports.sass = sassBuild;
+exports.stylesWatch = stylesWatch;

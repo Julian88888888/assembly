@@ -7,39 +7,39 @@ import config from '../config';
 
 
 const emittyPug = emittySetup(config.src.pug, 'pug', {
-  makeVinylFile: true,
+	makeVinylFile: true,
 })
 
-global.watch = false;
+global.isPugWatch = false;
 global.emittyChangedFile = {
-  path: '',
-  stats: null,
+	path: '',
+	stats: null,
 };
 
 export const pugBuild = () => (
-  gulp.src(`${config.src.pug}/*.pug`)
-    .pipe(plumber())
-    .pipe(
-      gulpif(
-        global.watch,
-        emittyPug.stream(
-          global.emittyChangedFile.path,
-          global.emittyChangedFile.stats,
-        ),
-      ),
-    )
-    .pipe(pug({ pretty: true }))
-    .pipe(gulp.dest(config.dest.html))
+	gulp.src(`${config.src.pug}/*.pug`)
+		.pipe(plumber())
+		.pipe(
+			gulpif(
+				global.isPugWatch,
+				emittyPug.stream(
+					global.emittyChangedFile.path,
+					global.emittyChangedFile.stats,
+				),
+			),
+		)
+		.pipe(pug({ pretty: true }))
+		.pipe(gulp.dest(config.dest.html))
 );
 
 export const pugWatch = () => {
-  global.watch = true;
+	global.watch = true;
 
-  gulp.watch(`${config.src.pug}/**/*.pug`, pugBuild)
-    .on('all', (event, filepath, stats) => {
-      global.emittyChangedFile = {
-        path: filepath,
-        stats,
-      };
-    });
+	gulp.watch(`${config.src.pug}/**/*.pug`, pugBuild)
+		.on('all', (event, filepath, stats) => {
+			global.emittyChangedFile = {
+				path: filepath,
+				stats,
+			};
+		});
 };
