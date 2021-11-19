@@ -8,6 +8,7 @@ import { stylesBuild, stylesWatch } from './gulp/tasks/styles';
 import { assetsBuild, assetsWatch } from './gulp/tasks/assets';
 import { imagesBuild, imagesWatch } from './gulp/tasks/images';
 import { spriteBuild, spriteWatch } from './gulp/tasks/sprite';
+import { libsBuild } from './gulp/tasks/scriptLibs'
 
 
 
@@ -23,6 +24,7 @@ export const build = gulp.series(
 		assetsBuild,
 		imagesBuild,
 		spriteBuild,
+		libsBuild,
 	)
 
 );
@@ -40,5 +42,3 @@ export const watch = gulp.series(
 	)
 
 );
-
-exports.stylesWatch = stylesWatch;

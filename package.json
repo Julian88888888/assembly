@@ -44,9 +44,11 @@
 		"eslint-config-airbnb": "^18.2.1",
 		"eslint-plugin-import": "^2.25.1",
 		"gulp": "^4.0.2",
+		"gulp-add-src": "^1.0.0",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-changed": "^4.0.3",
 		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
 		"gulp-group-css-media-queries": "^1.2.2",
 		"gulp-if": "^3.0.0",
 		"gulp-imagemin": "^7.1.0",
@@ -76,9 +78,11 @@
 	"dependencies": {
 		"focus-visible": "^5.2.0",
 		"import-fresh": "^3.3.0",
+		"jquery": "^3.6.0",
 		"node-sass": "^6.0.1",
 		"normalize": "^0.3.1",
 		"normalize.css": "^8.0.1",
+		"slick-carousel": "^1.8.1",
 		"smart-grid": "^2.1.2",
 		"vanilla-lazyload": "^17.5.0"
 	}

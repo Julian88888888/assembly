@@ -7,6 +7,7 @@ import uglify from 'gulp-uglify';
 import gulpif from 'gulp-if';
 import config from '../config';
 
+
 export const scriptsBuild = () => (
 	browserify(`${config.src.js}/main.js`, { debug: true })
 		.transform('babelify', { presets: ['@babel/preset-env'] })
