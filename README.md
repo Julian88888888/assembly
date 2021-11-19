@@ -1,6 +1,7 @@
 # Julian
 # Gulp стартовый шаблон pug, scss
 
+# [МОЙ КОНТАКТ](https://t.me/verstkaDD)
 
 ## Требования
 * [Node.js](https://nodejs.org/en/)
