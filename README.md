@@ -1,4 +1,4 @@
-# Name Julian Gulp стартовый шаблон pug, scss
+# Julian Gulp стартовый шаблон pug, scss
 
 
 ## Требования
